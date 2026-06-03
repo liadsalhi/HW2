@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Game screen layout.
+  Road = 5 lanes separated by yellow dividers.
+  Each lane column is a FrameLayout that stacks:
+    • a vertical LinearLayout of 8 glove ImageViews
+    • a vertical LinearLayout of 8 coin ImageViews  (aligned 1-to-1 with gloves)
+    • one player ImageView pinned to the bottom of the column.
+  Controls (buttons) live below the road and are hidden in Sensor mode.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- ── Status bar ─────────────────────────────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:id="@+id/txt_coins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coins: 0"
+            android:textColor="#B8860B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/txt_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 m"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+        <ImageView android:id="@+id/heart1"
+            android:layout_width="34dp" android:layout_height="34dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/heart_full" android:contentDescription="life" />
+        <ImageView android:id="@+id/heart2"
+            android:layout_width="34dp" android:layout_height="34dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/heart_full" android:contentDescription="life" />
+        <ImageView android:id="@+id/heart3"
+            android:layout_width="34dp" android:layout_height="34dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/heart_full" android:contentDescription="life" />
+
+    </LinearLayout>
+
+    <!-- ── Road  (5 lanes + yellow dividers) ──────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="#FFFFFF">
+
+        <!-- ══ LANE 0 ══════════════════════════════════════════════════════ -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <!-- Gloves column -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/glove_00" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_01" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_02" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_03" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_04" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_05" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_06" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_07" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/player_0" android:layout_width="match_parent" android:layout_height="70dp" android:src="@drawable/tyson" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="player" />
+            </LinearLayout>
+
+            <!-- Coins column (same proportions, so coin_0R aligns with glove_0R) -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/coin_00" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_01" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_02" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_03" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_04" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_05" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_06" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_07" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <!-- Spacer to match player height so coins stay aligned above player row -->
+                <View android:layout_width="match_parent" android:layout_height="70dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+        <!-- ══ LANE 1 ══════════════════════════════════════════════════════ -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/glove_10" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_11" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_12" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_13" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_14" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_15" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_16" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_17" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/player_1" android:layout_width="match_parent" android:layout_height="70dp" android:src="@drawable/tyson" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="player" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/coin_10" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_11" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_12" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_13" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_14" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_15" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_16" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_17" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <View android:layout_width="match_parent" android:layout_height="70dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+        <!-- ══ LANE 2 (center) ════════════════════════════════════════════ -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/glove_20" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_21" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_22" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_23" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_24" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_25" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_26" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_27" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/player_2" android:layout_width="match_parent" android:layout_height="70dp" android:src="@drawable/tyson" android:scaleType="fitCenter" android:visibility="visible" android:contentDescription="player" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/coin_20" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_21" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_22" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_23" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_24" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_25" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_26" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_27" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <View android:layout_width="match_parent" android:layout_height="70dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+        <!-- ══ LANE 3 ══════════════════════════════════════════════════════ -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/glove_30" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_31" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_32" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_33" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_34" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_35" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_36" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_37" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/player_3" android:layout_width="match_parent" android:layout_height="70dp" android:src="@drawable/tyson" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="player" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/coin_30" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_31" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_32" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_33" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_34" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_35" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_36" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_37" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <View android:layout_width="match_parent" android:layout_height="70dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+        <!-- ══ LANE 4 ══════════════════════════════════════════════════════ -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/glove_40" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_41" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_42" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_43" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_44" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_45" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_46" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/glove_47" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/glove" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="glove" />
+                <ImageView android:id="@+id/player_4" android:layout_width="match_parent" android:layout_height="70dp" android:src="@drawable/tyson" android:scaleType="fitCenter" android:visibility="invisible" android:contentDescription="player" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/coin_40" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_41" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_42" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_43" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_44" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_45" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_46" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <ImageView android:id="@+id/coin_47" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:src="@drawable/coin" android:scaleType="fitCenter" android:padding="6dp" android:visibility="invisible" android:contentDescription="coin" />
+                <View android:layout_width="match_parent" android:layout_height="70dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+    <!-- end road -->
+
+    <!-- ── Controls ───────────────────────────────────────────────────────── -->
+    <RelativeLayout
+        android:id="@+id/controls_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="14dp"
+        android:paddingBottom="26dp"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:text="←"
+            android:textSize="48sp"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:insetTop="0dp" android:insetBottom="0dp"
+            android:insetLeft="0dp" android:insetRight="0dp"
+            android:background="@drawable/btn_circle"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:padding="0dp" />
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:text="→"
+            android:textSize="48sp"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:insetTop="0dp" android:insetBottom="0dp"
+            android:insetLeft="0dp" android:insetRight="0dp"
+            android:background="@drawable/btn_circle"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:padding="0dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

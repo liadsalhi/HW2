@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simple top-down view of a racing car -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="240dp"
+    android:viewportWidth="160"
+    android:viewportHeight="240">
+
+    <!-- Car body -->
+    <path android:fillColor="#E53935"
+        android:pathData="M30,50 Q30,30 50,30 L110,30 Q130,30 130,50 L130,200 Q130,220 110,220 L50,220 Q30,220 30,200 Z"/>
+
+    <!-- Windshield (front) -->
+    <path android:fillColor="#90CAF9"
+        android:pathData="M48,38 L112,38 L118,80 L42,80 Z"/>
+
+    <!-- Rear window -->
+    <path android:fillColor="#90CAF9"
+        android:pathData="M48,170 L112,170 L112,205 L48,205 Z"/>
+
+    <!-- Front left wheel -->
+    <path android:fillColor="#212121"
+        android:pathData="M12,55 Q12,45 22,45 L38,45 L38,95 L22,95 Q12,95 12,85 Z"/>
+
+    <!-- Front right wheel -->
+    <path android:fillColor="#212121"
+        android:pathData="M122,45 L138,45 Q148,45 148,55 L148,85 Q148,95 138,95 L122,95 Z"/>
+
+    <!-- Rear left wheel -->
+    <path android:fillColor="#212121"
+        android:pathData="M12,155 Q12,145 22,145 L38,145 L38,195 L22,195 Q12,195 12,185 Z"/>
+
+    <!-- Rear right wheel -->
+    <path android:fillColor="#212121"
+        android:pathData="M122,145 L138,145 Q148,145 148,155 L148,185 Q148,195 138,195 L122,195 Z"/>
+
+    <!-- Racing stripe -->
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.3"
+        android:pathData="M72,30 L88,30 L88,220 L72,220 Z"/>
+
+</vector>

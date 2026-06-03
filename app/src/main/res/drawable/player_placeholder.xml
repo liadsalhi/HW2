@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mike Tyson placeholder – a simple stick-figure style person.
+  Replace by pointing MainActivity's playerView.setImageResource() to tyson.png
+  (place the PNG in app/src/main/res/drawable/tyson.png).
+
+  Layer order (bottom → top):
+    1. Blue boxing shirt / body
+    2. Red boxing shorts (overlaps lower half of shirt)
+    3. Skin-tone head (circle on top)
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Body / boxing shirt (blue) – spans most of the view height -->
+    <item
+        android:top="28dp"
+        android:bottom="4dp"
+        android:left="12dp"
+        android:right="12dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#1565C0"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
+    <!-- Boxing shorts (red) – lower portion, overlaps the shirt -->
+    <item
+        android:top="58dp"
+        android:bottom="4dp"
+        android:left="10dp"
+        android:right="10dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#C62828"/>
+            <corners
+                android:bottomLeftRadius="6dp"
+                android:bottomRightRadius="6dp"/>
+        </shape>
+    </item>
+
+    <!-- Head (skin-tone oval) – sits above the shirt -->
+    <item
+        android:top="2dp"
+        android:bottom="66dp"
+        android:left="20dp"
+        android:right="20dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFCC80"/>
+            <stroke android:width="1dp" android:color="#E6A860"/>
+        </shape>
+    </item>
+
+</layer-list>

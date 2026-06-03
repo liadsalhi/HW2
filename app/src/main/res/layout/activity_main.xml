@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Hearts bar -->
+    <LinearLayout
+        android:id="@+id/heartsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:paddingTop="14dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="12dp"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/heart1"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/heart_full"
+            android:contentDescription="Life 1" />
+
+        <ImageView
+            android:id="@+id/heart2"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/heart_full"
+            android:contentDescription="Life 2" />
+
+        <ImageView
+            android:id="@+id/heart3"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/heart_full"
+            android:contentDescription="Life 3" />
+    </LinearLayout>
+
+    <!-- Game grid: 3 lanes x 8 rows -->
+    <LinearLayout
+        android:id="@+id/gameGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:background="#FFFFFF">
+
+        <!-- Lane 0 (left) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView android:id="@+id/glove_00" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_01" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_02" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_03" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_04" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_05" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_06" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_07" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+        </LinearLayout>
+
+        <!-- Lane 1 (center) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView android:id="@+id/glove_08" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_09" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_10" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_11" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_12" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_13" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_14" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_15" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+        </LinearLayout>
+
+        <!-- Lane 2 (right) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView android:id="@+id/glove_16" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_17" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_18" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_19" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_20" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_21" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_22" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+            <ImageView android:id="@+id/glove_23" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scaleType="fitCenter" android:src="@drawable/glove" android:visibility="invisible" android:contentDescription="glove" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Player row: one Tyson per lane, only current lane is visible -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/player_0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tyson"
+            android:visibility="invisible"
+            android:contentDescription="Player" />
+
+        <ImageView
+            android:id="@+id/player_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tyson"
+            android:visibility="visible"
+            android:contentDescription="Player" />
+
+        <ImageView
+            android:id="@+id/player_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tyson"
+            android:visibility="invisible"
+            android:contentDescription="Player" />
+    </LinearLayout>
+
+    <!-- Controls bar -->
+    <RelativeLayout
+        android:id="@+id/controlsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="14dp"
+        android:paddingBottom="26dp"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:text="←"
+            android:textSize="48sp"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:background="@drawable/btn_circle"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:padding="0dp" />
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:text="→"
+            android:textSize="48sp"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:background="@drawable/btn_circle"
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:padding="0dp" />
+    </RelativeLayout>
+
+</LinearLayout>

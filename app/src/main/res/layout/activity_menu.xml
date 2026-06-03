@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#FFFFFF"
+    android:padding="24dp">
+
+    <!-- Tyson image -->
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/tyson"
+        android:scaleType="centerCrop"
+        android:contentDescription="Mike Tyson" />
+
+    <!-- Buttons - Slow -->
+    <Button
+        android:id="@+id/btn_buttons_slow"
+        android:layout_width="220dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/btn_slow"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:background="@drawable/btn_blue_rounded"
+        android:stateListAnimator="@null" />
+
+    <!-- Buttons - Fast -->
+    <Button
+        android:id="@+id/btn_buttons_fast"
+        android:layout_width="220dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/btn_fast"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:background="@drawable/btn_blue_rounded"
+        android:stateListAnimator="@null" />
+
+    <!-- Sensor Mode (tilt left/right for lane, tilt forward/back for speed) -->
+    <Button
+        android:id="@+id/btn_sensor_mode"
+        android:layout_width="220dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="32dp"
+        android:text="Sensor Mode"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:background="@drawable/btn_blue_rounded"
+        android:stateListAnimator="@null" />
+
+    <!-- High Scores -->
+    <Button
+        android:id="@+id/btn_high_scores"
+        android:layout_width="220dp"
+        android:layout_height="52dp"
+        android:text="High Score"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:background="@drawable/btn_blue_rounded"
+        android:stateListAnimator="@null" />
+
+</LinearLayout>

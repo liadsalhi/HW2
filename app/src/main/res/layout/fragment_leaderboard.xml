@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Column headers -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:orientation="horizontal"
+        android:background="@color/header_bg"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView android:layout_width="28dp" android:layout_height="wrap_content"
+            android:text="@string/col_rank" android:textColor="@color/white" android:textStyle="bold" android:textSize="12sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/col_name" android:textColor="@color/white" android:textStyle="bold" android:textSize="12sp" />
+        <TextView android:layout_width="52dp" android:layout_height="wrap_content"
+            android:text="@string/col_score" android:textColor="@color/white" android:textStyle="bold" android:textSize="12sp" android:gravity="end" />
+        <TextView android:layout_width="52dp" android:layout_height="wrap_content"
+            android:text="@string/col_distance" android:textColor="@color/white" android:textStyle="bold" android:textSize="12sp" android:gravity="end" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/col_location" android:textColor="@color/white" android:textStyle="bold" android:textSize="12sp" android:gravity="end" />
+    </LinearLayout>
+
+    <!-- Empty state message -->
+    <TextView
+        android:id="@+id/txt_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/no_scores"
+        android:textColor="#888888"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <!-- Score rows -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_scores"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

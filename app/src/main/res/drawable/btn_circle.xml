@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Circular button background for the ← and → direction buttons.
+  Uses a selector so the button darkens slightly when pressed.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pressed state: darker orange -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="#BF360C"/>
+            <stroke android:width="3dp" android:color="#7F2700"/>
+        </shape>
+    </item>
+
+    <!-- Normal state: vivid orange -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#E64A19"/>
+            <stroke android:width="3dp" android:color="#BF360C"/>
+        </shape>
+    </item>
+
+</selector>

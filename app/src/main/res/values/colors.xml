@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Road -->
+    <color name="road_asphalt">#3C3C3C</color>
+    <color name="lane_divider">#FFD700</color>
+
+    <!-- Menu / UI -->
+    <color name="menu_bg">#1A1A2E</color>
+    <color name="btn_red">#42A5F5</color>
+    <color name="btn_red_pressed">#1565C0</color>
+    <color name="gold">#FFD700</color>
+
+    <!-- Leaderboard table -->
+    <color name="row_even">#F5F5F5</color>
+    <color name="row_odd">#FFFFFF</color>
+    <color name="header_bg">#42A5F5</color>
+</resources>

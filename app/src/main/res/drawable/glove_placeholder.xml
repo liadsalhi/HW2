@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Boxing glove placeholder.
+  Replace this by pointing MainActivity's setImageResource() call to glove.png
+  (place the PNG in app/src/main/res/drawable/glove.png).
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outer glove body – bright red rounded square -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E53935"/>
+            <corners android:radius="50dp"/>
+            <stroke android:width="3dp" android:color="#B71C1C"/>
+        </shape>
+    </item>
+
+    <!-- Inner highlight – lighter red oval to give a 3-D glove feel -->
+    <item
+        android:top="8dp"
+        android:bottom="20dp"
+        android:left="8dp"
+        android:right="8dp">
+        <shape android:shape="oval">
+            <solid android:color="#EF5350"/>
+        </shape>
+    </item>
+
+    <!-- Wrist strap – a narrow dark-red strip at the very bottom -->
+    <item
+        android:top="52dp"
+        android:left="10dp"
+        android:right="10dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#7F0000"/>
+            <corners
+                android:bottomLeftRadius="12dp"
+                android:bottomRightRadius="12dp"/>
+        </shape>
+    </item>
+
+</layer-list>
