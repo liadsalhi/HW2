@@ -1,4 +1,4 @@
-package com.example.hw1
+﻿package com.example.hw2
 
 /**
  * All game modes passed from MenuActivity to GameActivity.
