@@ -21,7 +21,7 @@
         <!-- Google Maps API key – replace with your own from Google Cloud Console -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAgSWRx392ydWatkryV-FYG1xL8M49YJY8" />
+            android:value="@string/google_maps_key" />
 
         <!-- Main entry point: menu screen -->
         <activity
