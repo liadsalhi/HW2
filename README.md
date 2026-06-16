@@ -30,7 +30,7 @@ An Android dodge game where the player must avoid falling boxing gloves across 5
 ## 🧱 Project Structure
 
 ```
-com.example.hw1
+com.example.hw2
 │
 ├── GameManager.kt         # Game loop, 5×8 grid, spawn logic, collision detection
 ├── GameActivity.kt        # Main game screen, timer, button/sensor input
